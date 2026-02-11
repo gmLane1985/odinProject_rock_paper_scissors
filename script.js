@@ -15,7 +15,6 @@ function getComputerChoice() {
   }
 }
 
-// one round
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   let roundResult = '';
@@ -37,9 +36,7 @@ function playRound(humanChoice, computerChoice) {
   else if (humanChoice === 'scissors' && computerChoice === 'paper') {
     roundResult = 'You win! Scissors beats Paper';
     humanScore++;
-  }
-  // computer wins
-  else {
+  } else {
     roundResult = 'You lose! ' + computerChoice + ' beats ' + humanChoice;
     computerScore++;
   }
@@ -48,7 +45,6 @@ function playRound(humanChoice, computerChoice) {
   checkForWinner();
 }
 
-// display results
 function updateDisplay(roundResult) {
   resultsDiv.classList.add('active');
   resultsDiv.innerHTML = `
@@ -58,7 +54,6 @@ function updateDisplay(roundResult) {
   `;
 }
 
-// check score announce winner
 function checkForWinner() {
   if (humanScore === 5) {
     resultsDiv.innerHTML = `
@@ -77,14 +72,13 @@ function checkForWinner() {
   }
 }
 
-// Disable buttons when game is over
 function disableButtons() {
   ['rock-btn', 'paper-btn', 'scissors-btn'].forEach((id) => {
     document.getElementById(id).disabled = true;
   });
 }
 
-// Add event listeners to buttons
+// add event listeners to buttons
 const choices = ['rock', 'paper', 'scissors'];
 choices.forEach((choice) => {
   document.getElementById(`${choice}-btn`).addEventListener('click', () => {
