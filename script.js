@@ -1,11 +1,10 @@
 /* Create a new function named getComputerChoice.
 Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”.*/
 
-// Variables to store the score
 let humanScore = 0;
 let computerScore = 0;
 
-// Get the computer's random choice
+// computer choice
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
 
@@ -18,13 +17,13 @@ function getComputerChoice() {
   }
 }
 
-// Get the human player's choice
+// human choice
 function getHumanChoice() {
   let playerChoice = prompt('Enter rock, paper, or scissors:');
   return playerChoice.toLowerCase();
 }
 
-// Play one round of the game
+// one round
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
 
@@ -33,29 +32,29 @@ function playRound(humanChoice, computerChoice) {
     return;
   }
 
-  // Check if human wins with rock
+  // human wins with rock if
   if (humanChoice === 'rock' && computerChoice === 'scissors') {
     console.log('You win! Rock beats Scissors');
     humanScore = humanScore + 1;
   }
-  // Check if human wins with paper
+  // human wins with paper if
   else if (humanChoice === 'paper' && computerChoice === 'rock') {
     console.log('You win! Paper beats Rock');
     humanScore = humanScore + 1;
   }
-  // Check if human wins with scissors
+  // human wins with scissors if
   else if (humanChoice === 'scissors' && computerChoice === 'paper') {
     console.log('You win! Scissors beats Paper');
     humanScore = humanScore + 1;
   }
-  // Computer wins
+  // computer wins
   else {
     console.log('You lose! ' + computerChoice + ' beats ' + humanChoice);
     computerScore = computerScore + 1;
   }
 }
 
-// Play 5 rounds of the game
+// Play 5 rounds
 function playGame() {
   // Round 1
   console.log('--- Round 1 ---');
